@@ -146,7 +146,7 @@
     right around the corner of this tag ;)
     
 -->
-<div id="impress">
+<div id="impress" data-transition-duration="0">
 
     <!--
         
@@ -196,7 +196,7 @@
         <h1>oVirt Python API</h1>
     </div>
 
-    <div class="step slide" data-x="1500" data-y="0" data-transition-duration="0" >
+     <div class="step slide" data-x="1500" data-y="0" data-transition-duration="0">
       <p>
       <q>
       <h1>Consists Of</h1>
@@ -209,24 +209,22 @@
     </q>
     </div>
 
-    <div class="step slide" data-x="2500" data-y="0" data-transition-duration="0">
+    <div class="step slide" data-x="2500" data-y="0" >
       <p>
       <q>
-        <h1>5 Restful Actions</h1>
+        <h1>5 Common Restful Actions</h1>
       <ul>
         <li>Create (Collection broker) - Add</li>
         <li>Delete (Member broker)     - Delete</li>
         <li>Index (Collection broker)   - List</li>
         <li>Show (Collection broker)   - Get</li>
         <li>Update (Member broker)     - Update</li>
-        <em>shown as: Action(broker) - method name</em><br />
-        <em>** custom actions too  for each broker</em>
       </ul>
       </p>
     </q>
     </div>
 
-    <div class="step slide" data-x="3500" data-y="100">
+    <div class="step slide" data-x="3500" data-y="100" data-transition-duration="10">
       <h1>Api Class</h1>
       <script src="https://gist.github.com/dstywho/524704f3844e8c1c8086.js"></script>
       composed of collection brokers:
@@ -242,15 +240,44 @@
     <script src="https://gist.github.com/dstywho/ec1c61807d69db727319.js"></script>
     </div>
 
-    <div class="step slide" data-x="0" data-y="2000">
-      <h1>Rhevm ART</h1>
-      <strong>Pros:</strong>
-      <li>same tests used to test multiple apis: python, rest, cli</li>
-      <li>define test cases using xml or through code</li>
-      <br />
-      <strong>Cons:</strong>
-      <li>learning curve is steep</li>
+
+    <div class="step slide" data-x="5500" data-y="100">
+      <h1>Example Test</h1>
+      <script src="https://gist.github.com/dstywho/e2bb1bdddc32a005909f.js"></script>
+      helpers for: fixtures, params <br />
+      all broker methods are handled through the repository
     </div>
+
+
+    <div class="step slide" data-x="0" data-y="2000">
+      <h1>the test framework</h1>
+      <li>python 2.6 </li>
+      <li>testunit2 - xunit test framework </li>
+      <li>nose2 - test runner </li>
+      <li>pip - dependency management </li>
+      <li>virtualenv - useful for local dev  </li>
+    </div>
+
+    <div class="step slide" data-x="1000" data-y="2000">
+      <h1>running the tests with nose nose2 </h1>
+      from your the project root run:
+      <pre>
+        nose2
+        nose2 --skip-teardown
+        nose2 --reportengine
+      </pre>
+      jenkins runs as <pre>nose2 --verbose --reportengine</pre>
+      <br /> generates a junit formated test output in nose2-tests.xml  
+    </div>
+
+
+    <div class="step slide" data-x="2000" data-y="2000">
+      <h1>What's Next</h1>
+       write up how to set up development environment
+       <br /> incoporate rhsc?
+       <br /> add more tests
+    </div>
+
     <!--
         
         So to make a summary of all the possible attributes used to position presentation steps, we have:
